@@ -57,10 +57,13 @@ RUN apt-get update \
 RUN ln -sf /usr/include/eigen3/Eigen /usr/include/Eigen
 
 #Build OpenRAVE    
+#RUN add-apt-repository ppa:openrave/release \
+#    && sudo apt-get update \
+#    && sudo apt-get install -y openrave
 WORKDIR /root/
 RUN git clone --branch latest_stable https://github.com/rdiankov/openrave.git \
     && cd openrave \
-    && git checkout 9c79ea260e1c009b0a6f7c03ec34f59629ccbe2c \
+    && git checkout v0.9.0 \
     && mkdir build \
     && cd build \
     && cmake .. -DOSG_DIR=/usr/local/lib64/ \
