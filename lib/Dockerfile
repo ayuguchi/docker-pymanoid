@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM nvidia/cudagl:9.0-devel-ubuntu16.04
 
 RUN apt-get update
 # System normal libraries

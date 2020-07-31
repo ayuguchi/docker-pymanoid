@@ -1,8 +1,9 @@
-version: "2"
+version: "2.3"
 services:
     pymanoid:
         build: lib
         container_name: pymanoid
+        runtime: nvidia
         environment:
             # to transport X11 application window 
             - DISPLAY
